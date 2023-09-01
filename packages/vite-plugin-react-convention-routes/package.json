@@ -1,0 +1,42 @@
+{
+  "name": "@orca-fe/vite-plugin-react-convention-routes",
+  "version": "0.0.1",
+  "description": "Demo component descriptions.",
+  "keywords": [
+    "react",
+    "component"
+  ],
+  "author": "NicoKam",
+  "license": "MIT",
+  "types": "es/index.d.ts",
+  "module": "es/index.js",
+  "main": "lib/index.js",
+  "files": [
+    "dist",
+    "es",
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "scripts": {
+    "build": "father build",
+    "prepublishOnly": "npm run build",
+    "test": "jest --passWithNoTests",
+    "clear": "rimraf lib es"
+  },
+  "dependencies": {
+    "tslib": "^2.5.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.7",
+    "jss": "^10.10.0"
+  }
+}

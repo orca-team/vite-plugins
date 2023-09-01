@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@orca-fe/vite-plugin-react-convention-routes": ["./src"]
+    }
+  }
+}
