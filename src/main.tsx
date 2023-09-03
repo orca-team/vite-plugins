@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Comp from '@orca-fe/vite-plugin-react-convention-routes';
+import { BrowserRouter, useRoutes } from 'react-router-dom';
+import routes from 'virtual:convention-routes';
+
+
+const RoutesRenderer = () => useRoutes(routes);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <div>
-      Hello world
-      <Comp />
-    </div>
+    <BrowserRouter>
+      <RoutesRenderer />
+    </BrowserRouter>
+    <pre>
+      {JSON.stringify(routes, null, 2)}
+    </pre>
   </React.StrictMode>,
 );

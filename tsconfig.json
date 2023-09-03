@@ -6,8 +6,15 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
+    "importHelpers": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+
+
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -19,10 +26,10 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "rootDir": ".",
     "paths": {
-      "@orca-fe/vite-plugin-react-convention-routes": ["./packages/vite-plugin-react-convention-routes/src"]
+      "@orca-fe/vite-plugin-react-convention-routes": ["./packages/vite-plugin-react-convention-routes/src/index.ts"]
     }
   },
-  "include": ["src", "packages", ".eslintrc.cjs", "vite.config.ts"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src", "packages", ".eslintrc.cjs","vite.config.ts"]
 }
