@@ -9,14 +9,5 @@ export default defineConfig({
     output: 'lib',
     transformer: 'babel',
     targets: { ie: 11 },
-    extraBabelPlugins: [
-      [
-        'babel-plugin-import',
-        {
-          libraryName: 'antd',
-          style: true,
-        },
-      ],
-    ],
   },
 });
