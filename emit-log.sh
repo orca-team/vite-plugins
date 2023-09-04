@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cat log.txt
+echo "running emit-log"
 
 # 取出 log.txt 的文件内容
 log=$(cat log.txt|grep 'New tag:')
