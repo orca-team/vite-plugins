@@ -9,6 +9,7 @@ on:
       - master
     paths:
       - 'packages/*/package.json'
+      - '.github/workflows/publish.yml'
 
 jobs:
   replace-package-json-and-publish:
