@@ -33,6 +33,8 @@ jobs:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
       - name: emit log
         if: always()
-        run: ./emit-log.sh
+        run: |
+          cat ./emit-log.sh
+          ./emit-log.sh
         env:
           DING_TOKEN: ${{secrets.DING_TOKEN}}
