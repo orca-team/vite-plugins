@@ -1,6 +1,7 @@
 {
   "name": "@orca-fe/vite-plugin-react-convention-routes",
-  "version": "0.0.2",
+  "version": "0.0.3",
+  "type": "module",
   "description": "A vite plugin for react convention routes",
   "keywords": [
     "react",
@@ -9,8 +10,7 @@
   "author": "NicoKam",
   "license": "MIT",
   "types": "es/index.d.ts",
-  "module": "es/index.js",
-  "main": "lib/index.js",
+  "main": "es/index.js",
   "files": [
     "dist",
     "typing.d.ts",
