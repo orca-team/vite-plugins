@@ -1,7 +1,10 @@
 import { basename, join } from 'path';
-import slash from 'slash';
 import type { RouteObject } from 'react-router';
 import type { BuildRoutesOptions } from './defs';
+
+function slash(path: string) {
+  return path.replace(/\\/g, '/');
+}
 
 const defaultIsIndex = (path: string) => {
   const pathWithoutExt = path.split('.').slice(0, -1)
@@ -14,8 +17,22 @@ const defaultIsLayout = (path: string) => {
   return basename(pathWithoutExt) === '_layout';
 };
 
-function escapeDynamicPath(path: string, fallback?: ((path: string) => string)) {
-  const s = path.replace(/\[([^[\]]+)\]/g, ':$1');
+/**
+ * 转义动态子路径(不包含 /)
+ * @param path
+ * @param fallback 当不存在动态子路径时的回调
+ */
+function escapeDynamicSubPath(path: string, fallback?: ((path: string) => string)) {
+  // 支持将 /[id]/xxx 或者 /$id/xxx 的路径转换为 /:id/xxx
+  const s = path
+    // 兼容 umi 3.x 的动态路由写法
+    .replace(/\[([^[\]]+)(\$)?\]/g, (_, v1, v2) => `:${v1}${v2 ? '?' : ''}`)
+    // 兼容 umi 4.x 的动态路由写法
+    .replace(/^\$/g, ':');
+  // 兼容 umi 4.x 的完全动态路由写法
+  if (path === '$') {
+    return '*';
+  }
   if (s.includes(':')) {
     return s;
   }
@@ -55,7 +72,7 @@ export default function buildRoutes(
       return undefined;
     }
     const route: RouteObject = {
-      path: escapeDynamicPath(currentPath, transform),
+      path: escapeDynamicSubPath(currentPath, transform),
     };
     cache.set(path, route);
     parent.children = parent.children ?? [];
@@ -93,7 +110,7 @@ export default function buildRoutes(
     }
 
     const route: RouteObject = {
-      path: routeIsIndex ? undefined : escapeDynamicPath(currentPath, transform),
+      path: routeIsIndex ? undefined : escapeDynamicSubPath(currentPath, transform),
       index: routeIsIndex,
       element: `@import|${join(pageRoot, path)}|`,
     };

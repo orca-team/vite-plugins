@@ -10,8 +10,13 @@ import { createRoutes } from './createRoutes';
 const moduleId = 'virtual:convention-routes';
 const log = createLogger();
 
+
+
 export type ReactConventionRoutesOptions = CreateRoutesOptions & {
+
+  /** 需要扫描的页面根目录 */
   pageRoot?: string;
+
 };
 
 
