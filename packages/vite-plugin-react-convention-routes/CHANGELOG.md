@@ -1,5 +1,11 @@
 # @orca-fe/vite-plugin-react-convention-routes
 
+## 0.0.4
+
+### Patch Changes
+
+- chore: 打包配置
+
 ## 0.0.3
 
 ### Patch Changes
