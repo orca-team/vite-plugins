@@ -2,6 +2,8 @@
 
 echo "running emit-log"
 
+env
+
 # 取出 log.txt 的文件内容
 log=$(cat log.txt|grep 'New tag:')
 

@@ -34,7 +34,9 @@ jobs:
       - name: emit log
         if: always()
         run: |
+          env
           cat ./emit-log.sh
           ./emit-log.sh
         env:
+          TEST_TOKEN: test-token
           DING_TOKEN: ${{secrets.DING_TOKEN}}
