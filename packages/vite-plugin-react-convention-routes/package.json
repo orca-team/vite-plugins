@@ -1,6 +1,6 @@
 {
   "name": "@orca-fe/vite-plugin-react-convention-routes",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "description": "A vite plugin for react convention routes",
   "keywords": [
@@ -15,7 +15,9 @@
     "dist",
     "typing.d.ts",
     "es",
-    "lib"
+    "lib",
+    "routes.d.ts",
+    "routes.js"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
