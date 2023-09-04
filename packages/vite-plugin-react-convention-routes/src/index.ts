@@ -5,12 +5,10 @@ import chokidar from 'chokidar';
 import { createLogger } from 'vite';
 import type { CreateRoutesOptions } from './createRoutes';
 import { createRoutes } from './createRoutes';
-
+import '../typing.d';
 
 const moduleId = 'virtual:convention-routes';
 const log = createLogger();
-
-
 
 export type ReactConventionRoutesOptions = CreateRoutesOptions & {
 
@@ -18,7 +16,6 @@ export type ReactConventionRoutesOptions = CreateRoutesOptions & {
   pageRoot?: string;
 
 };
-
 
 export default function reactConventionRoutes(options: ReactConventionRoutesOptions = {}): Plugin {
   const defaultPageRoot = resolve(process.cwd(), 'src/pages');

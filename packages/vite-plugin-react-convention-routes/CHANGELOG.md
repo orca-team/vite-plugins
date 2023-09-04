@@ -1,5 +1,11 @@
 # @orca-fe/vite-plugin-react-convention-routes
 
+## 0.0.5
+
+### Patch Changes
+
+- chore: add typing for virtual:convention-routes
+
 ## 0.0.4
 
 ### Patch Changes
