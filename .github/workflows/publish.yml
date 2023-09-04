@@ -27,14 +27,15 @@ jobs:
           npm i pnpm -g
           pnpm i --no-frozen-lockfile
       - name: publish
-        run: npm run pub:only | tee log.txt
+        run: |
+          env
+          npm run pub:only | tee log.txt
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
       - name: emit log
         if: always()
         run: |
-          env
           cat ./emit-log.sh
           ./emit-log.sh
         env:
