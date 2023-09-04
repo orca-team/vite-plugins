@@ -1,6 +1,6 @@
 {
   "name": "@orca-fe/vite-plugin-react-convention-routes",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "module",
   "description": "A vite plugin for react convention routes",
   "keywords": [

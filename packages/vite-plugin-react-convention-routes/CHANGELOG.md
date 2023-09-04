@@ -1,5 +1,11 @@
 # @orca-fe/vite-plugin-react-convention-routes
 
+## 0.0.8
+
+### Patch Changes
+
+- chore: update document
+
 ## 0.0.7
 
 ### Patch Changes

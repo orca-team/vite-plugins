@@ -2,14 +2,14 @@
 
 一款适用于 `react-router-dom@6` 的路由插件，可以根据约定的目录结构自动生成路由配置。
 
-插件会生成一份 `RouteObject[]` 类型的路由配置，你需要使用 `virtual:convention-routes` 引入。
+插件会生成一份 `RouteObject[]` 类型的路由配置，你需要使用 `@orca-fe/vite-plugin-convention-routes/routes` 引入。
 路由配置可以通过 `react-router-dom@6` 的 [`useRoutes`](https://reactrouter.com/en/main/hooks/use-routes) 直接生成路由。
 
 ```tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, useRoutes } from 'react-router-dom';
-import routes from 'virtual:convention-routes';
+import routes from '@orca-fe/vite-plugin-convention-routes/routes';
 
 // 生成路由组件
 const ConventionRoutes = () => useRoutes(routes);
@@ -68,14 +68,14 @@ export default {
 };
 ```
 
-在 `main.tsx` 中引入路由配置 `virtual:convention-routes` 并使用 `useRoutes` 生成一个路由组件。
+在 `main.tsx` 中引入路由配置 `@orca-fe/vite-plugin-convention-routes/routes` 并使用 `useRoutes` 生成一个路由组件。
 接下来你就可以在 `App` 组件中使用该路由组件了。
 
 ```tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, useRoutes } from 'react-router-dom';
-import routes from 'virtual:convention-routes';
+import routes from '@orca-fe/vite-plugin-convention-routes/routes';
 
 // 生成路由组件
 const ConventionRoutes = () => useRoutes(routes);
