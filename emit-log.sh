@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cat log.txt
+
 # 取出 log.txt 的文件内容
 log=$(cat log.txt|grep 'New tag:')
 
