@@ -1,11 +1,16 @@
 {
   "name": "@orca-fe/vite-plugin-react-convention-routes",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "type": "module",
   "description": "A vite plugin for react convention routes",
   "keywords": [
     "react",
-    "component"
+    "convention",
+    "routes",
+    "convention-routes",
+    "vite",
+    "plugin",
+    "umi"
   ],
   "author": "NicoKam",
   "license": "MIT",

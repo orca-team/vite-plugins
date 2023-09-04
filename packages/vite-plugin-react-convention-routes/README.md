@@ -96,14 +96,14 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
 ### 动态路由
 
-#### 兼容 umi@4.x 的动态路由规则
+#### 兼容 [umi@4.x](https://umijs.org/docs/guides/routes#%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1) 的动态路由规则
 
 带 `$` 前缀的目录或文件为动态路由。若 `$` 后不指定参数名，则代表 `*` 通配，比如：
 
 * `src/pages/users/$id.tsx` 会成为 `/users/:id`
 * `src/pages/users/$id/settings.tsx` 会成为 `/users/:id/settings`
 
-#### 兼容 umi@3.x 的动态路由规则
+#### 兼容 [umi@3.x](https://v3.umijs.org/docs/convention-routing) 的动态路由规则
 
 约定 `[]` 包裹的文件或文件夹为动态路由。
 
@@ -132,3 +132,21 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 与 `umijs` 不同，你可以在 `src/pages` 目录下创建 `_layout.tsx`，作为全局的 `layout`。而不是 `src/layouts`
 
 
+### 配置推荐
+
+```javascript
+// vite.config.js
+import conventionRoutes from '@orca-fe/vite-plugin-react-convention-routes';
+import { paramCase } from 'change-case';
+
+export default {
+  plugins: [
+    conventionRoutes({
+      // 只扫描 404, index 和 _layout 文件，其他文件都不作为路由入口，这样可以避免一些不必要的路由生成，也使得路由更加清晰
+      filter: path => /^(.*\/)?(index|_layout|404)\.(j|t)sx?$/.test(path),
+      // 规范路由路径，避免出现大写字母和下划线
+      transform: paramCase,
+    }),
+  ],
+};
+```
