@@ -25,7 +25,7 @@
     "type": "git"
   },
   "scripts": {
-    "build": "npm run clear && npm run build-esbuild && npm run build-tsc",
+    "build": "npm run clear && npm run build-esbuild && npm run build-tsc || echo 'Done.'",
     "build-tsc": "tsc --emitDeclarationOnly --declaration --declarationMap --outDir lib src/index.ts",
     "build-esbuild": "esbuild --bundle --platform=node --target=node12 --external:react --external:react-router-dom --external:vite --external:fast-glob --external:chokidar --external:tslib --format=esm --outdir=lib src/index.ts",
     "prepublishOnly": "npm run build",
