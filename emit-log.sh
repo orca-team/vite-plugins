@@ -11,7 +11,7 @@ echo $log
 
 # 如果 log.txt 为空
 if [ -z "$log" ]; then
-  curl 'https://oapi.dingtalk.com/robot/send?access_token=${DING_TOKEN}' \
+  curl "https://oapi.dingtalk.com/robot/send?access_token=${DING_TOKEN}" \
    -H 'Content-Type: application/json' \
    -d '{"msgtype": "markdown","markdown": {"title":"orca-fe发布通知","text":"### @orca-fe/vite-plugins\n流水线结束，没有新的模块发布"}}'
   exit 0
@@ -21,7 +21,7 @@ fi
 log=${log//$'\n'/\\n}
 echo $log
 echo $DING_TOKEN
-curl 'https://oapi.dingtalk.com/robot/send?access_token=${DING_TOKEN}' \
+curl "https://oapi.dingtalk.com/robot/send?access_token=${DING_TOKEN}" \
    -H 'Content-Type: application/json' \
    -d '{"msgtype": "markdown","markdown": {"title":"orca-fe发布通知","text":"### @orca-fe/vite-plugins\n流水线结束，以下模块已发布：\n'"$log"'"}}'
 
