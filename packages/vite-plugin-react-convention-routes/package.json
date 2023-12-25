@@ -29,7 +29,8 @@
     "access": "public"
   },
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/orca-team/vite-plugins/tree/master/packages/vite-plugin-react-convention-routes"
   },
   "scripts": {
     "build": "npm run clear && npm run build-esbuild && npm run build-tsc || echo 'Done.'",
