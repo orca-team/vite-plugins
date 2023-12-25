@@ -9,7 +9,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, useRoutes } from 'react-router-dom';
-import routes from '@orca-fe/vite-plugin-react-convention-routes/routes';
+import '@orca-fe/vite-plugin-react-convention-routes/typing.d';
+import routes from 'virtual:convention-routes';
 
 // 生成路由组件
 const ConventionRoutes = () => useRoutes(routes);
