@@ -1,5 +1,11 @@
 # @orca-fe/vite-plugin-react-convention-routes
 
+## 0.0.11
+
+### Patch Changes
+
+- chore: restore exports
+
 ## 0.0.10
 
 ### Patch Changes
